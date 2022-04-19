@@ -14,7 +14,7 @@ struct Town
 	{
 
 		cout << "название: " << Name << endl;
-		cout << "количество населения: " << population << endl;
+		cout << "количество населения: " << kolvo << endl;
 		cout << "площадь: " << S << endl;
 
 	}
@@ -56,6 +56,43 @@ for (int i = 0; i < size; i++)
 
 
 }
+Town* swap;
+
+for (int i = 0; i < size; i++)
+{
+
+	for (int j = i + 1; j < size; j++)
+	{
+
+
+
+		if (A[i]->S > A[j]->S)
+
+		{
+			swap = A[i];
+
+			A[i] = A[j];
+
+			A[j] = swap;
+		}
+
+		if (A[i]->kolvo > A[j]->kolvo)
+		{
+			swap = A[i];
+
+			A[i] = A[j];
+
+			A[j] = swap;
+
+		}
+	};
+}
+
+for (int i = 0; i < size; i++)
+
+{
+
+	A[i]->print();
 
 }
  return 0;
