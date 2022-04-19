@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿#include <fstream>
+#include <iostream>
 
 using namespace std;
 
@@ -8,22 +9,23 @@ struct Town
 	char Name[30]; // название
 	int kolvo; // население
 	double S;   //площадь
-
 	void print()
 
 	{
 
 		cout << "название: " << Name << endl;
 		cout << "количество населения: " << kolvo << endl;
-		cout << "площадь: " << S << endl;
-
+		cout << "площадь: " << S << endl; 
+		ofstream os("result.txt");
+		os << Name << ' ' << kolvo<< ' ' << S << ' ' << endl;
+		os.close();
 	}
 
 };
 
 int main()
 {
-  setlocale(LC_ALL, "rus");
+	setlocale(LC_ALL, "rus");
 
   int size = 0;
 
@@ -93,7 +95,6 @@ for (int i = 0; i < size; i++)
 {
 
 	A[i]->print();
-
 }
  return 0;
 }
